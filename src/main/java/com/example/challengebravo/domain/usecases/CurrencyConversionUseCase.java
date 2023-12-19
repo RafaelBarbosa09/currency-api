@@ -18,8 +18,7 @@ public class CurrencyConversionUseCase {
         CurrencyExchangeInfo currencyExchangeInfo = currencyExchangeClient.getCurrencyExchangeInfo(from, to);
         BigDecimal high = new BigDecimal(currencyExchangeInfo.getHigh());
         BigDecimal low = new BigDecimal(currencyExchangeInfo.getLow());
-        BigDecimal result = amount.multiply(high.add(low)).divide(new BigDecimal("2"));
 
-        return result;
+        return amount.multiply(high.add(low)).divide(new BigDecimal("2"));
     }
 }
